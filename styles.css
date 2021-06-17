@@ -1,0 +1,56 @@
+body{
+    margin: 0;
+}
+.tl-header{
+    height: 100px;
+    background-color: #000;
+    color: #fff;
+}
+.tl-header-text{
+    margin: 0;
+    padding: 20px;
+    font-size: 40px;
+}
+.tl-input{
+    width: 65%;
+    height: 50px;
+    font-size: 24px;
+    margin-left: 175px;
+    margin-top: 30px;
+}
+.tl-input-btn{
+    height: 56px;
+    width: 120px;
+    position: relative;
+    background-color: #000;
+    color: #fff;
+    border-color: black;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 24px;
+}
+
+.tl-tasks{
+    list-style: none;
+    width: 1265px;
+}
+.tl-task{
+    font-size: 24px;
+    margin: 20px 0 20px 130px;
+}
+.removeBtn{
+    background-color: #000;
+    color: #fff;
+    border-color: black;
+    font-weight: bold;
+    border-radius: 5px;
+    height: 25px;
+    float: right;
+}
+.tl-input-btn:hover, .removeBtn:hover{
+    background-color: #fff;
+    color: #000;
+    border-color: #fff;
+    box-shadow: 0 0 8px 1px rgba(34, 60, 80, 0.3) inset;
+}
+
