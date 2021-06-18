@@ -41,7 +41,7 @@ body{
 .tl-task:hover{
     background-color: aliceblue;
 }
-.removeBtn{
+.removeBtn, .editBtn{
     background-color: #000;
     color: #fff;
     border-color: black;
@@ -50,7 +50,10 @@ body{
     height: 25px;
     float: right;
 }
-.tl-input-btn:hover, .removeBtn:hover{
+.editBtn{
+    margin-right: 10px;
+}
+.tl-input-btn:hover, .removeBtn:hover, .editBtn:hover{
     background-color: #fff;
     color: #000;
     border-color: #fff;
