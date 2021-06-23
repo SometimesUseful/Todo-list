@@ -65,8 +65,10 @@ function editBtnListener(){
 function checkListener(){
     if (this.checked === true){
         this.parentNode.style.textDecoration = 'line-through';
+        this.setAttribute('checked','checked');
     } else {
         this.parentNode.style.textDecoration = 'none';
+        this.removeAttribute('checked','checked');
     }
     localStorage.setItem('tasks', list.innerHTML);
 }
