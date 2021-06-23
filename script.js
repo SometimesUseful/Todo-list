@@ -2,6 +2,22 @@ let list = document.querySelector('.tl-tasks');
 let addBtn = document.querySelector('.tl-input-btn');
 let input = document.querySelector('.tl-input');
 
+window.onload = function (){
+    list.innerHTML = localStorage.getItem('tasks');
+    for (const check of document.querySelectorAll('.check')) {
+        check.addEventListener('change', checkListener);
+    }
+    for (const editBtn of document.querySelectorAll('.editBtn')) {
+        editBtn.addEventListener('click', editBtnListener);
+    }
+    for (const removeBtn of document.querySelectorAll('.removeBtn')) {
+        removeBtn.addEventListener('click',function (){
+            this.parentNode.remove();
+            localStorage.setItem('tasks', list.innerHTML);
+        })
+    }
+}
+
 function addElement(){
     if (input.value === ''){
         alert('Enter a task');
@@ -29,18 +45,21 @@ function addElement(){
     check.addEventListener('change',checkListener);
     removeBtn.addEventListener('click', function (){
         this.parentNode.remove();
+        localStorage.setItem('tasks', list.innerHTML);
     });
     editBtn.addEventListener('click',editBtnListener)
     input.value = '';
+    localStorage.setItem('tasks', list.innerHTML);
+
 }
 
 function editBtnListener(){
-    let taskValue = document.querySelector('.task-value');
     let newValue = prompt('Enter new task', this.parentNode.childNodes[1].innerText);
     if (newValue.length === 0){
         return;
     }
     this.parentNode.childNodes[1].innerText = newValue;
+    localStorage.setItem('tasks', list.innerHTML);
 }
 
 function checkListener(){
@@ -49,6 +68,7 @@ function checkListener(){
     } else {
         this.parentNode.style.textDecoration = 'none';
     }
+    localStorage.setItem('tasks', list.innerHTML);
 }
 
 addBtn.addEventListener('click', () => addElement());
